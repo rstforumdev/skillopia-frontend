@@ -1,10 +1,11 @@
 import type { NextPage } from 'next';
 import { Title } from '@mantine/core';
+import { Hero } from '../components/Pages/Index/Hero/Hero';
 
 const Home: NextPage = () => {
   return (
     <div>
-      <Title order={1}>Hello World</Title>
+      <Hero />
     </div>
   );
 };

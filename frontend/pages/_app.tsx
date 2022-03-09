@@ -3,13 +3,15 @@ import Head from 'next/head';
 import { MantineProvider, NormalizeCSS, GlobalStyles } from '@mantine/core';
 import { NotificationsProvider } from '@mantine/notifications';
 
+import { Layout } from '../components/Common/Layout/Layout';
+
 export default function App(props: AppProps) {
   const { Component, pageProps } = props;
 
   return (
     <>
       <Head>
-        <title>Mantine next example</title>
+        <title>Skillopia</title>
         <meta
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=device-width"
@@ -23,9 +25,12 @@ export default function App(props: AppProps) {
         }}>
         <NormalizeCSS />
         <GlobalStyles />
-        <NotificationsProvider>
-          <Component {...pageProps} />
-        </NotificationsProvider>
+
+        <Layout>
+          <NotificationsProvider>
+            <Component {...pageProps} />
+          </NotificationsProvider>
+        </Layout>
       </MantineProvider>
     </>
   );
